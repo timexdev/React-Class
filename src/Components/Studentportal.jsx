@@ -23,13 +23,17 @@ const Studentportal = () => {
     setallstudents(newAllStudent)
   }
 
+  const editStudent = () =>{
+    
+  }
+
   return (
     <>
         <div className="container">
           <div className="row">
             <div className="col-6 mx-auto">
-                <h1 className='text-primary'>Student Portal</h1>
-                <div>
+                <h1 className='text-primary text-center mt-5'>Student Portal</h1>
+                <div className='form-control shadow py-4'>
                   <input
                   className='form-control my-2' 
                   type="text" 
@@ -58,12 +62,12 @@ const Studentportal = () => {
                   onChange={(e) => setpassword(e.target.value)}
                   value={password}/>
 
-                  <button className='btn btn-primary text-white' onClick={add}>Add Student</button>
+                  <button className='btn btn-primary text-white form-control' onClick={add}>Add Student</button>
                 </div>
 
-                <hr />
+                <hr className='mt-5 mb-3' />
                 <div>
-                  <h2 className='text-primary'>List of Students</h2>
+                  <h2 className='text-primary text-center'>List of Students</h2>
                   <table className='table'>
                     <thead>
                       <tr>
@@ -82,7 +86,9 @@ const Studentportal = () => {
                           <td>{eachStudent.lastname}</td>
                           <td>{eachStudent.email}</td>
                           <td>
-                            <button className='btn btn-warning me-3'>Edit</button>
+                            <button className='btn btn-warning me-3'
+                            onClick={()=>editStudent(index)}>Edit</button>
+
                             <button className='btn btn-danger'
                             onClick={() => deleteStudent(index)}>Delete</button>
                           </td>
